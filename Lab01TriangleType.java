@@ -1,4 +1,4 @@
-package lab01;
+package Lab01;
 
 /**
  * In this program, you will be writing a method called triangleType to determine the type of
@@ -31,30 +31,33 @@ public class Lab01TriangleType {
 	 */
 	public static int triangleType (double a, double b, double c) {
 
-		double short1;
-		double short2;
-		double long1;
+		double short1  ;
+		double short2   ;
+		double long1  ;
+	
 		
-		double lonsq = Math.pow(long1,2);
-		double s1sq = Math.pow(short1, 2);
-		double s2sq = Math.pow(short2, 2);
 		//setting variables
 		if (a<b) {
 			
-			if (b>c) short2 = c;
-			else short2 = b;
-		} short1 = a;
-		
-		else {
-			if (a>c) short2 = c;
-			else short2 = a;
-		}short1 = b;
+			if (b>c) { short2 = c; long1 = b;}
+			else { short2 = b; long1 = c;}
+		 short1 = a;}
 		
 		
-		//return int
+		else 
+		
+		{
+			if (a>c) { short2 = c; long1 = a;}
+			else {short2 = a; long1 = c;}
+		short1 = b;}
+		
+		
+		
+	
+		//return in
 		if ((short1 + short2) <= long1) return -1;
-		else if (longsq <(s1sq+ s2sq) ) return 1;
-		else if (longsq == (s1sq + s2sq)) return 2;
+		else if (Math.pow(long1,2) <( Math.pow(short1, 2)+  Math.pow(short2, 2) ))  return 1;
+		else if (Math.pow(long1,2) == (Math.pow(short1, 2) +  Math.pow(short2, 2)) ) return 2;
 		else return 3;
 		
 	
