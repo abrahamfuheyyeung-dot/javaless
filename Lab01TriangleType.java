@@ -14,6 +14,9 @@ public class Lab01TriangleType {
 	 * @param b - a double value indicating the length of a second side of a triangle
 	 * @param c - a double value indicating the length of the third side of a triangle
 	 * @return - an int value that will be returned using the following logic:
+	 * 
+	 * 
+	 * 
 	 * 		-1 if the values a, b, and c cannot form a triangle
 	 *		1 if the values a, b, and c form an acute triangle 
 	 *		2 if the values a, b, and c form a right triangle 
@@ -28,17 +31,33 @@ public class Lab01TriangleType {
 	 */
 	public static int triangleType (double a, double b, double c) {
 
-		/*
-		 * WRITE YOUR CODE HERE
-		 * 
-		 * You may use only those methods from the Math class that are listed in the Java Quick Reference.
-		 * For example, you may not use Math.max or Math.min.
-		 * 
-		 * Note: the 0 return value is bogus; it is here temporarily just to ensure that this program
-		 * compiles. Remove this return statement, replacing it with your logic for the whole method.
-		 */
+		double short1;
+		double short2;
+		double long1;
 		
-		return 0;
+		double lonsq = Math.pow(long1,2);
+		double s1sq = Math.pow(short1, 2);
+		double s2sq = Math.pow(short2, 2);
+		//setting variables
+		if (a<b) {
+			
+			if (b>c) short2 = c;
+			else short2 = b;
+		} short1 = a;
+		
+		else {
+			if (a>c) short2 = c;
+			else short2 = a;
+		}short1 = b;
+		
+		
+		//return int
+		if ((short1 + short2) <= long1) return -1;
+		else if (longsq <(s1sq+ s2sq) ) return 1;
+		else if (longsq == (s1sq + s2sq)) return 2;
+		else return 3;
+		
+	
 		
 	}
 
