@@ -52,12 +52,14 @@ public class Lab01TriangleType {
 		short1 = b;}
 		
 		
-		
 	
 		//return in
-		if ((short1 + short2) <= long1) return -1;
-		else if (Math.pow(long1,2) <( Math.pow(short1, 2)+  Math.pow(short2, 2) ))  return 1;
-		else if (Math.pow(long1,2) == (Math.pow(short1, 2) +  Math.pow(short2, 2)) ) return 2;
+		if ((short1 + short2) <= Math.abs(long1) + 0.0000000001 || (short1+short2)<= Math.abs(long1) - 0.0000000001) return -1;
+		else if ( Math.pow(short1, 2)+  Math.pow(short2, 2) - Math.pow(long1, 2)>0.0000000000001 ) return 1;	
+		//equals within a reasonable degree
+		else if (Math.sqrt(Math.pow(long1,2)) <= Math.sqrt(((Math.pow(short1, 2) +  Math.pow(short2, 2)))+0.00000000001) 
+				&& Math.sqrt(Math.pow(long1,2)) >= Math.sqrt(Math.abs((Math.pow(short1, 2) +  Math.pow(short2, 2))) - 0.0000000001 )) return 2;
+		//greater 
 		else return 3;
 		
 	
