@@ -41,27 +41,29 @@ public class Lab01TriangleType {
 		if (a<b) {
 			
 			if (b>c) { short2 = c; long1 = b;}
-			else { short2 = b; long1 = c;}
-		 short1 = a;}
-		
+			else     { short2 = b; long1 = c;}
+		short1 = a;
+		 }
 		
 		else 
 		
 		{
 			if (a>c) { short2 = c; long1 = a;}
-			else {short2 = a; long1 = c;}
-		short1 = b;}
+			else     { short2 = a; long1 = c;}
+		short1 = b;
+		}
 		
 		
 	
-		//return in
+		//return vals
+		//not t
 		if ((short1 + short2) <= Math.abs(long1) + e || (short1+short2)<= Math.abs(long1) - e) return -1;
-		
+		//acute
 		else if (( Math.pow(short1, 2)+  Math.pow(short2, 2) )- Math.pow(long1, 2)>e ) return 1;	
-		//equals within a reasonable degree
+		//right
 		else if (Math.abs(Math.sqrt(Math.pow(long1,2)) - Math.sqrt(( (Math.pow(short1, 2) +  Math.pow(short2, 2) ) )))<=e) 
 				return 2;
-		//greater 
+		//obt
 		else return 3;
 		
 	
