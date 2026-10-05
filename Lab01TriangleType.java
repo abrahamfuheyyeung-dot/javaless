@@ -34,6 +34,7 @@ public class Lab01TriangleType {
 		double short1  ;
 		double short2   ;
 		double long1  ;
+		double e = 0.000000000001;
 	
 		
 		//setting variables
@@ -54,11 +55,12 @@ public class Lab01TriangleType {
 		
 	
 		//return in
-		if ((short1 + short2) <= Math.abs(long1) + 0.0000000001 || (short1+short2)<= Math.abs(long1) - 0.0000000001) return -1;
-		else if ( Math.pow(short1, 2)+  Math.pow(short2, 2) - Math.pow(long1, 2)>0.0000000000001 ) return 1;	
+		if ((short1 + short2) <= Math.abs(long1) + e || (short1+short2)<= Math.abs(long1) - e) return -1;
+		
+		else if (( Math.pow(short1, 2)+  Math.pow(short2, 2) )- Math.pow(long1, 2)>e ) return 1;	
 		//equals within a reasonable degree
-		else if (Math.sqrt(Math.pow(long1,2)) <= Math.sqrt(((Math.pow(short1, 2) +  Math.pow(short2, 2)))+0.00000000001) 
-				&& Math.sqrt(Math.pow(long1,2)) >= Math.sqrt(Math.abs((Math.pow(short1, 2) +  Math.pow(short2, 2))) - 0.0000000001 )) return 2;
+		else if (Math.abs(Math.sqrt(Math.pow(long1,2)) - Math.sqrt(( (Math.pow(short1, 2) +  Math.pow(short2, 2) ) )))<=e) 
+				return 2;
 		//greater 
 		else return 3;
 		
